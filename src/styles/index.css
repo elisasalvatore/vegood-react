@@ -8,10 +8,17 @@
 
 .navbar {
 	width: 100vw;
-	height: 15vh;
+	height: 120px;
 	position: fixed;
 	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 99;
+}
+
+@media screen and (min-width: 768px) {
+	.navbar {
+		height: 130px;
+	}
 }

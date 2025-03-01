@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
 export const Navbar = () => {
 	const [isScroll, setIsScroll] = useState(false);
@@ -20,13 +21,19 @@ export const Navbar = () => {
 				isScroll ? "navbar bg-darkGreenCustom" : "navbar bg-transparent"
 			}
 		>
-			<Link to="/" className="pointer">
-				<img
-					src={logo}
-					alt="VeGood Logo"
-					className="w-28 h-28 sm:w-32 sm:h-32"
-				/>
-			</Link>
+			<motion.div
+				initial={{ scale: 0 }}
+				whileInView={{ scale: 1 }}
+				transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+			>
+				<Link to="/" className="pointer">
+					<img
+						src={logo}
+						alt="Vegood Logo"
+						className="w-28 h-28 sm:w-32 sm:h-32"
+					/>
+				</Link>
+			</motion.div>
 		</nav>
 	);
 };

@@ -6,7 +6,9 @@ function App() {
 	return (
 		<div className="App">
 			<Hero />
-			<div className="w-screen h-screen bg-mintGreenCustom"></div>
+			<div id="prova" className="w-screen h-screen bg-mintGreenCustom">
+				<h1>ciaociao</h1>
+			</div>
 		</div>
 	);
 }
