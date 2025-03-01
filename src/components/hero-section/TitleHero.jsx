@@ -2,7 +2,7 @@ import React from "react";
 
 export const TitleHero = () => {
 	return (
-		<div className="title-container w-5/6 h-full flex flex-col justify-center text-whiteCustom font-bold">
+		<div className="w-5/6 h-full flex flex-col justify-center text-whiteCustom font-bold">
 			<p className="text-[64px] md:text-[130px] lg:text-[180px] leading-[85px] md:leading-[130px] lg:leading-[180px]">
 				Vegetarian
 			</p>

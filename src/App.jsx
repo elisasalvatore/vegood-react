@@ -1,14 +1,15 @@
 import React from "react";
 // components
-import { Hero } from "./components/Hero";
+import { Navbar } from "./components/Navbar";
+import { SectionHero } from "./components/hero-section/SectionHero";
+import { SectionRecipes } from "./components/recipes-section/SectionRecipes";
 
 function App() {
 	return (
 		<div className="App">
-			<Hero />
-			<div id="prova" className="w-screen h-screen bg-mintGreenCustom">
-				<h1>ciaociao</h1>
-			</div>
+			<Navbar />
+			<SectionHero />
+			<SectionRecipes />
 		</div>
 	);
 }

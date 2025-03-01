@@ -15,6 +15,10 @@ export const Navbar = () => {
 	};
 	window.addEventListener("scroll", changeBackgroundColor);
 
+	const scrollToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<nav
 			className={
@@ -26,7 +30,7 @@ export const Navbar = () => {
 				whileInView={{ scale: 1 }}
 				transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
 			>
-				<Link to="/" className="pointer">
+				<Link to="/" className="pointer" onClick={scrollToTop}>
 					<img
 						src={logo}
 						alt="Vegood Logo"
