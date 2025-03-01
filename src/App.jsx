@@ -1,14 +1,13 @@
-import "./App.css";
+import React from "react";
+// components
+import { Hero } from "./components/Hero";
 
 function App() {
 	return (
-		<>
-			<div className="App">
-				<h1 class="text-3xl font-bold underline hover:text-emerald-500">
-					Hello world!
-				</h1>
-			</div>
-		</>
+		<div className="App">
+			<Hero />
+			<div className="w-screen h-screen bg-mintGreenCustom"></div>
+		</div>
 	);
 }
 
