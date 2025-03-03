@@ -4,6 +4,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 .navbar {
@@ -21,4 +22,8 @@
 	.navbar {
 		height: 130px;
 	}
+}
+
+.icon {
+	margin-left: 10px;
 }

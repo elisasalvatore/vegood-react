@@ -34,7 +34,7 @@ export const Navbar = () => {
 					<img
 						src={logo}
 						alt="Vegood Logo"
-						className="w-28 h-28 sm:w-32 sm:h-32"
+						className="w-25 h-25 sm:w-30 sm:h-30"
 					/>
 				</Link>
 			</motion.div>

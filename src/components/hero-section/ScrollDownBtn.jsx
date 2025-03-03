@@ -10,13 +10,11 @@ export const ScrollDownBtn = () => {
 	}
 
 	return (
-		<div className="flex items-end justify-center w-1/6">
-			<div className="w-10 h-10 lg:w-15 lg:h-15 absolute right-[20px] lg:right-[40px] bottom-[40px] bg-blackCustom opacity-50 border border-whiteCustom flex justify-center items-center cursor-pointer hover:scale-75">
-				<IoIosArrowRoundDown
-					onClick={scrollDown}
-					className="w-10 h-10 lg:w-15 lg:h-15 text-whiteCustom "
-				/>
-			</div>
+		<div className="">
+			<IoIosArrowRoundDown
+				onClick={scrollDown}
+				className="w-15 h-15 lg:w-20 lg:h-20 opacity-60 absolute bottom-2 right-2 md:bottom-5 md:right-5 lg:bottom-10 lg:right-10 text-whiteCustom cursor-pointer hover:scale-120"
+			/>
 		</div>
 	);
 };

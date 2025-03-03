@@ -5,8 +5,8 @@ import { TitleHero } from "./TitleHero";
 
 export const SectionHero = () => {
 	return (
-		<div className="w-screen h-[98vh] md:h-screen flex justify-center items-center bg-[url(../assets/images/bg-leaf.jpg)] bg-cover bg-center">
-			<div className="w-5/6 h-5/6 flex">
+		<div className="w-screen h-screen bg-[url(../assets/images/bg-leaf.jpg)] bg-cover bg-center">
+			<div className="w-screen h-screen items-center justify-center flex flex-col">
 				<TitleHero />
 				<ScrollDownBtn />
 			</div>
