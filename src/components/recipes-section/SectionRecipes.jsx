@@ -5,7 +5,7 @@ import { RecipesList } from "./RecipesList";
 
 export const SectionRecipes = () => {
 	return (
-		<div className="w-screen h-screen bg-mintGreenCustom flex flex-col column items-center">
+		<div className="section w-screen h-full bg-mintGreenCustom flex flex-col column items-center justify-between">
 			<TitleRecipes />
 			<SearchBar />
 			<RecipesList />

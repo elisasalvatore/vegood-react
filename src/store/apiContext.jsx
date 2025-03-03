@@ -1,11 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
+const apiKey = "b4ccafe33f224ba586fada635c6e9147"; // API key form spoonacular.com
+const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&diet=vegetarian`;
+
 const APIContext = createContext();
 export default APIContext;
-
-const apiUrl =
-	"https://api.spoonacular.com/recipes/complexSearch?apiKey=592279103e82485c9bb6858af69f33ac&diet=vegetarian";
 
 export function RecipesContextProvider({ children }) {
 	const [recipes, setRecipes] = useState([]);

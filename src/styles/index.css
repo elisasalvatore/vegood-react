@@ -24,6 +24,15 @@
 	}
 }
 
+.section {
+	padding: 40px 0;
+}
+
 .icon {
 	margin-left: 10px;
+}
+
+.ctn-title-recipe {
+	margin: 20px;
+	padding: 10px;
 }
