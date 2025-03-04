@@ -10,11 +10,16 @@ export const RecipesList = () => {
 				return (
 					<div
 						key={recipe.id}
-						style={{ backgroundImage: `url(${recipe.image})` }}
-						className="w-4/4 h-[231px] md:w-[45%] lg:w-[30%] 2xl:h-[331px] bg-cover bg-center bg-no-repeat flex items-end cursor-pointer "
+						style={{
+							backgroundImage: `url(${recipe.image})`,
+						}}
+						className="card-recipe w-4/4 h-[231px] md:w-[45%] lg:w-[30%] 2xl:h-[420px] bg-cover bg-center bg-no-repeat flex items-end cursor-pointer hover:brightness-50 text-transparent hover:text-orangeCustom"
 					>
-						<div className="ctn-title-recipe w-6/6 h-2/5 bg-whiteCustom z-20 flex flex-wrap items-center justify-between overflow-hidden">
-							<h1 className="text-blackCustom text-[18px] 2xl:text-[25px] font-bold z-40">
+						{/* <p className="absolute bottom-35 left-50 text-[30px] w-[200px]">
+							See more
+						</p> */}
+						<div className="ctn-title-recipe w-6/6 h-[48%] bg-whiteCustom z-20 flex flex-wrap items-center justify-center overflow-hidden">
+							<h1 className="text-blackCustom text-[18px] 2xl:text-[28px] text-center font-bold uppercase z-40">
 								{recipe.title}
 							</h1>
 						</div>

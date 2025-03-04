@@ -1,7 +1,9 @@
 import React from "react";
+//components
 import { TitleRecipes } from "./TitleRecipes";
-import { SearchBar } from "./SearchBar";
+import { SearchBar } from "../SearchBar";
 import { RecipesList } from "./RecipesList";
+import { Button } from "../Button";
 
 export const SectionRecipes = () => {
 	return (
@@ -9,6 +11,7 @@ export const SectionRecipes = () => {
 			<TitleRecipes />
 			<SearchBar />
 			<RecipesList />
+			<Button text="Load more" />
 		</div>
 	);
 };

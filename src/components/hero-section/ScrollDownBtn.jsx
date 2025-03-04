@@ -10,11 +10,11 @@ export const ScrollDownBtn = () => {
 	}
 
 	return (
-		<div className="">
+		<>
 			<IoIosArrowRoundDown
 				onClick={scrollDown}
 				className="w-15 h-15 lg:w-20 lg:h-20 opacity-60 absolute bottom-2 right-2 md:bottom-5 md:right-5 lg:bottom-10 lg:right-10 text-whiteCustom cursor-pointer hover:scale-120"
 			/>
-		</div>
+		</>
 	);
 };

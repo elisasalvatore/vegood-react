@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
-const apiKey = "b4ccafe33f224ba586fada635c6e9147"; // API key form spoonacular.com
-const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&diet=vegetarian`;
+export const apiKey = "592279103e82485c9bb6858af69f33ac"; // API key form spoonacular.com
+const recepiesApi = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&include-tags=vegetarian&number=12`;
 
 const APIContext = createContext();
 export default APIContext;
@@ -12,9 +12,9 @@ export function RecipesContextProvider({ children }) {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const { data } = await axios.get(apiUrl);
-			console.log(data.results);
-			setRecipes(data.results);
+			const { data } = await axios.get(recepiesApi);
+			console.log(data);
+			setRecipes(data.recipes);
 		};
 
 		fetchData();
