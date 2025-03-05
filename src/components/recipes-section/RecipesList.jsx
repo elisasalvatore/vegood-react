@@ -1,6 +1,15 @@
 import React, { useContext } from "react";
 import APIContext from "../../store/apiContext";
 
+const cardStyles = {
+	title:{
+		container: {
+			margin: 20,
+			padding: 10
+		}
+	}
+}
+
 export const RecipesList = () => {
 	const { recipes } = useContext(APIContext);
 
@@ -18,7 +27,7 @@ export const RecipesList = () => {
 						{/* <p className="absolute bottom-35 left-50 text-[30px] w-[200px]">
 							See more
 						</p> */}
-						<div className="ctn-title-recipe w-6/6 h-[48%] bg-whiteCustom z-20 flex flex-wrap items-center justify-center overflow-hidden">
+						<div style={cardStyles.title.container} className="w-6/6 h-[48%] bg-whiteCustom z-20 flex flex-wrap items-center justify-center overflow-hidden">
 							<h1 className="text-blackCustom text-[18px] 2xl:text-[28px] text-center font-bold uppercase z-40">
 								{recipe.title}
 							</h1>
