@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 //store
-// import { searchRecipesApi } from "../../store/apiContext";
 import APIContext from "../../store/apiContext";
 //components
 import { LoadMoreButton } from "../LoadMoreButton";
+import { ScrollTopBtn } from '../ScrollTopBtn';
 import { SearchBar } from "../SearchBar";
 import { RecipesList } from './RecipesList';
 import { TitleRecipes } from "./TitleRecipes";
@@ -12,7 +12,8 @@ export const SectionRecipes = () => {
 	const { recipes, param, setParam, visible} = useContext(APIContext);
 
 	return (
-		<div style={{paddingTop: 40, paddingBottom: 60}} className="w-screen min-h-[90vh] h-[100%] bg-mintGreenCustom flex flex-col column items-center justify-start gap-16">
+		<div  style={{paddingTop: 40, paddingBottom: 60}} className="w-full lg:w-5/6 min-h-[80vh] h-full bg-mintGreenCustom flex flex-col items-center gap-16">
+			<ScrollTopBtn />
 			{/* Title section */}
 			<TitleRecipes />
 			{/* Search Bar section */}
@@ -31,10 +32,10 @@ export const SectionRecipes = () => {
 						{/* If there are no results: */}
 						<div className="w-full flex items-start justify-center">
 						<h2
-							className="text-sm md:text-md lg:text-xl 2xl:text-2xl text-darkGreenCustom"
-							style={{ margin: "40px" }}
+							className="lg:text-xl 2xl:text-2xl text-darkGreenCustom text-center"
+							style={{ margin: "10px 40px 40px 40px" }}
 						>
-							No results, look for another ingredient. 🥕🌱
+							No results, look for another ingredient 🥕🌱
 						</h2>
 					</div>
 				</>

@@ -9,7 +9,7 @@ import { SectionRecipes } from "./components/recipes-section/SectionRecipes";
 function App() {
 	return (
 		<RecipesContextProvider>
-			<div className="App">
+			<div className="App w-full bg-mintGreenCustom flex flex-col items-center justify-center">
 				<Navbar />
 				<SectionHero />
 				<SectionRecipes />
