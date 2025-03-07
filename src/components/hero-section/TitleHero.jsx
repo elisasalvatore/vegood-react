@@ -3,7 +3,7 @@ import React from "react";
 export const TitleHero = () => {
 	return (
 		<div className="w-5/6 h-screen flex flex-col justify-center">
-			<h1 className="text-[41px] leading-[50px] sm:text-[50px] md:text-[100px] md:leading-[100px] lg:text-[150px] lg:leading-[150px] 2xl:text-[200px] 2xl:leading-[200px] text-whiteCustom font-bold">
+			<h1 className="text-[50px] leading-[50px] sm:text-[50px] md:text-[100px] md:leading-[100px] lg:text-[150px] lg:leading-[150px] 2xl:text-[200px] 2xl:leading-[200px] text-whiteCustom font-bold">
 				VEGETARIAN <br />
 				GOOD <br />
 				VEGOOD
