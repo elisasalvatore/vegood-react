@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 
-export const apiKey = "467e128f7d014cd1887a9963df84ec9c"; // API key form spoonacular.com
-export const searchRecipesApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&diet=vegetarian&number=100&query=`;
-// export const searchRecipesApi = `https://dummyjson.com/recipes`;
+// const apiKey = import.meta.env.VITE_APP_API_KEY;
+// export const searchRecipesApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&diet=vegetarian&number=100&query=`;
+export const searchRecipesApi = `https://dummyjson.com/recipes`;
 
 const APIContext = createContext();
 export default APIContext;
@@ -18,6 +18,9 @@ export function RecipesContextProvider({ children }) {
 		const fetchData = async () => {
 				try {
 					const data = await axios.get(searchRecipesApi + param);
+					// Spoonacular API
+					// const results = data.data.results;
+					// DummyJSON API
 					const results = data.data.recipes;
 					console.log(results)
 					setRecipes(results);
