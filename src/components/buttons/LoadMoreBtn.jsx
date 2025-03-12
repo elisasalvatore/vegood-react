@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import APIContext from "../store/apiContext";
+import APIContext from "../../store/apiContext";
 
-export const LoadMoreButton = () => {
+export const LoadMoreBtn = () => {
 	const { recipes, setVisible } = useContext(APIContext);
 	const [, setMoreData ] = useState([]);
 	

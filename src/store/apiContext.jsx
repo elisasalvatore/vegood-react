@@ -1,42 +1,48 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
-import { useDebounce } from "use-debounce";
 
-// const apiKey = import.meta.env.VITE_APP_API_KEY;
-// export const searchRecipesApi = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&diet=vegetarian&number=100&query=`;
-export const searchRecipesApi = `https://dummyjson.com/recipes`;
+export const API_URL = `https://api.spoonacular.com/recipes/complexSearch`; //Spoonacular API URL
+export const API_KEY = import.meta.env.VITE_APP_API_KEY; //Spoonacular API KEY
+export const URL_PARAM_DIET = "vegetarian";
 
 const APIContext = createContext();
 export default APIContext;
 
 export function RecipesContextProvider({ children }) {
-		const [recipes, setRecipes] = useState([]);
-		const [param, setParam] = useState("");
-		const [debouncedFilter] = useDebounce(param, 2000);
-		const [visible, setVisible] = useState(6);
-	
-		const fetchData = async () => {
-				try {
-					const data = await axios.get(searchRecipesApi + param);
-					// Spoonacular API
-					// const results = data.data.results;
-					// DummyJSON API
-					const results = data.data.recipes;
-					console.log(results)
-					setRecipes(results);
-				} catch (error) {
-					console.error(error);
-				}
-			
-		};
-	
-		useEffect(() => {
-			// will be called after every state (filter) update
-			fetchData();
-		}, [param, debouncedFilter]);
+	const [recipes, setRecipes] = useState([]);
+	const [visible, setVisible] = useState(6);
+
+	const fetchData = async () => {
+		try {
+			const res = await axios.get(
+				`${API_URL}?apiKey=${API_KEY}&diet=${URL_PARAM_DIET}&number=100`
+			);
+			const data = res.data.results;
+			console.log("DATA", data);
+			setRecipes(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
 
 	return (
-		<APIContext.Provider value={{ recipes, param, setParam, visible, setVisible }}>{children}</APIContext.Provider>
+		<APIContext.Provider
+			value={{
+				API_URL,
+				API_KEY,
+				URL_PARAM_DIET,
+				recipes,
+				setRecipes,
+				visible,
+				setVisible,
+			}}
+		>
+			{children}
+		</APIContext.Provider>
 	);
 }
 

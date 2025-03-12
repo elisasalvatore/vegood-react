@@ -1,19 +1,22 @@
 import React from "react";
-// context
+import { Route, Routes } from "react-router";
+// store
 import { RecipesContextProvider } from "./store/apiContext";
-// components
+//pages
+import { Home } from "./pages/Home";
+import { RecipeDetails } from "./pages/RecipeDetails";
+//components
 import { Navbar } from "./components/Navbar";
-import { SectionHero } from "./components/hero-section/SectionHero";
-import { SectionRecipes } from "./components/recipes-section/SectionRecipes";
 
 function App() {
 	return (
 		<RecipesContextProvider>
-			<div className="App w-full bg-mintGreenCustom flex flex-col items-center justify-center">
-				<Navbar />
-				<SectionHero />
-				<SectionRecipes />
-			</div>
+			<Navbar />
+			<Routes>
+				{/* <Route path="*" element={<NoMatch />} /> ----- TODOOOO ------ */} 
+				<Route path="/" element={<Home />} />
+				<Route path="/recipes/:id" element={<RecipeDetails />} />
+			</Routes>
 		</RecipesContextProvider>
 	);
 }

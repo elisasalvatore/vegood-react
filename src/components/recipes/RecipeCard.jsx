@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 
 export const RecipeCard = ({ recipe }) => {
 	const [isHover, setIsHover] = useState(false);
@@ -12,9 +13,9 @@ export const RecipeCard = ({ recipe }) => {
 				onMouseLeave={() => setIsHover(false)}
 			>
 				{isHover ? (
-					<a href="" className="w-full h-full rounded-xl bg-darkGreenCustom text-3xl text-orangeCustom flex justify-center items-center">
+					<Link to={`/recipes/${recipe.id}`} className="w-full h-full rounded-xl bg-darkGreenCustom text-3xl text-orangeCustom flex justify-center items-center">
 						Let's Cook!
-					</a>
+					</Link>
 				) : (
 					<>
 						<div className="w-full h-[60%]">
@@ -30,8 +31,8 @@ export const RecipeCard = ({ recipe }) => {
 								className="text-blackCustom text-[18px] 2xl:text-[28px] text-center font-bold uppercase z-40"
 								style={{ padding: "10px" }}
 							>
-								{/* {recipe.title} */}
-								{recipe.name}
+								{recipe.title}
+								{/* {recipe.name} */}
 							</h1>
 						</div>
 					</>

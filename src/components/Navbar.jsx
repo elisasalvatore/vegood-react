@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import logo from "../assets/images/logo.png";
-import { Link } from "react-router";
 import { motion } from "motion/react";
+import React, { useState } from "react";
+import { NavLink } from "react-router";
+import logo from "../assets/images/logo.png";
 
 export const Navbar = () => {
 	const [isScroll, setIsScroll] = useState(false);
@@ -30,13 +30,13 @@ export const Navbar = () => {
 				whileInView={{ scale: 1 }}
 				transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
 			>
-				<Link to="/" className="pointer" onClick={scrollToTop}>
+				<NavLink to="/" className="pointer" onClick={scrollToTop}>
 					<img
 						src={logo}
 						alt="Vegood Logo"
 						className="w-25 h-25 sm:w-30 sm:h-30"
 					/>
-				</Link>
+				</NavLink>
 			</motion.div>
 		</nav>
 	);
