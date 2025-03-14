@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 
-export const API_URL = `https://api.spoonacular.com/recipes/complexSearch`; //Spoonacular API URL
-export const API_KEY = import.meta.env.VITE_APP_API_KEY; //Spoonacular API KEY
-export const URL_PARAM_DIET = "vegetarian";
+const API_KEY = import.meta.env.VITE_APP_API_KEY; //Spoonacular API KEY
+const API_URL = `https://api.spoonacular.com/recipes/complexSearch`; //Spoonacular API URL for all recipes
+const URL_PARAM_DIET = "vegetarian"; // Spoonacular API URL Param
+const URL_PARAM_NUMBER = "100"; // Spoonacular API URL Param
 
 const APIContext = createContext();
 export default APIContext;
@@ -15,7 +16,7 @@ export function RecipesContextProvider({ children }) {
 	const fetchData = async () => {
 		try {
 			const res = await axios.get(
-				`${API_URL}?apiKey=${API_KEY}&diet=${URL_PARAM_DIET}&number=100`
+				`${API_URL}?apiKey=${API_KEY}&diet=${URL_PARAM_DIET}&number=${URL_PARAM_NUMBER}`
 			);
 			const data = res.data.results;
 			console.log("DATA", data);
@@ -38,7 +39,7 @@ export function RecipesContextProvider({ children }) {
 				recipes,
 				setRecipes,
 				visible,
-				setVisible,
+				setVisible
 			}}
 		>
 			{children}

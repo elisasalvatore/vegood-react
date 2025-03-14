@@ -32,7 +32,6 @@ export const RecipeCard = ({ recipe }) => {
 								style={{ padding: "10px" }}
 							>
 								{recipe.title}
-								{/* {recipe.name} */}
 							</h1>
 						</div>
 					</>

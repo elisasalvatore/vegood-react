@@ -8,7 +8,7 @@ import { SearchBar } from "../SearchBar";
 import { RecipesList } from "./RecipesList";
 
 export const RecipesSection = () => {
-	const { recipes, param, setParam, visible } = useContext(APIContext);
+	const { recipes, visible } = useContext(APIContext);
 
 	return (
 		<div
@@ -24,7 +24,7 @@ export const RecipesSection = () => {
 				</h1>
 			</div>
 			{/* Search Bar section */}
-			<SearchBar param={param} setParam={setParam} />
+			<SearchBar />
 			{/* Recipes List section */}
 			{recipes && recipes?.length > 0 ? (
 				<>
