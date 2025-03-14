@@ -23,7 +23,7 @@ export const ScrollTopBtn = () => {
 			{visible && 
 				<IoIosArrowRoundUp
 				onClick={scrollTop}
-				className="w-8 h-8 md:w-10 md:h-10 2xl:w-14 2xl:h-14 fixed absolute bottom-5 right-5 rounded-[50%] bg-orangeCustom text-white cursor-pointer hover:scale-80 z-9999"
+				className="w-8 h-8 md:w-10 md:h-10 2xl:w-14 2xl:h-14 fixed absolute bottom-16 2xl:bottom-15 right-1 lg:right-15 rounded-[50%] bg-orangeCustom text-white cursor-pointer hover:scale-80 z-9999"
 				/>
 			}
 		</>

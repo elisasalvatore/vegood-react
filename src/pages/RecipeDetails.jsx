@@ -3,6 +3,7 @@ import DOMPurify from "dompurify";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 //components
+import { BackHomeBtn } from "../components/buttons/BackHomeBtn";
 import { ScrollTopBtn } from "../components/buttons/ScrollTopBtn";
 
 export const RecipeDetails = () => {
@@ -32,11 +33,13 @@ export const RecipeDetails = () => {
 		instructions,
 	} = recipe;
 
-	const summaryHTML = DOMPurify.sanitize(summary); 
-	const instructionsHTML = DOMPurify.sanitize(instructions); 
+	const summaryHTML = DOMPurify.sanitize(summary);
+	const instructionsHTML = DOMPurify.sanitize(instructions);
 
 	return (
 		<>
+			{/* Back to home Button */}
+			<BackHomeBtn />
 			{/* Scroll to top Button */}
 			<ScrollTopBtn />
 
@@ -49,11 +52,10 @@ export const RecipeDetails = () => {
 				<div className="w-5/6 h-[60%] bg-whiteCustom flex items-center justify-center">
 					{/* START SECTION ---- Recipe title */}
 					<section
-						style={{ padding: "60px 10px" }}
-						className="w-5/6 h-[220px] md:h-[398px] lg:h-[398px] 2xl:h-[600px] border-b-3 border-lightGreenCustom flex items-center justify-center"
+						className="w-5/6 h-6/6 border-b-3 border-lightGreenCustom flex items-center justify-center"
 					>
 						{/* START TITLE ---- Recipe title */}
-						<h2 className="text-43xl md:text-4xl lg:text-6xl 2xl:text-8xl font-bold text-center">
+						<h2 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-8xl font-bold text-center">
 							{title}
 						</h2>
 						{/* END TITLE ---- Recipe title */}
@@ -64,7 +66,10 @@ export const RecipeDetails = () => {
 			{/* END HERO IMAGE - Image recipe full screen */}
 
 			{/* START MAIN CONTAINER - Recipe details (green one) */}
-			<div style={{ paddingBottom: "60px" }} className="w-6/6 bg-mintGreenCustom flex items-center justify-center">
+			<div
+				style={{ paddingBottom: "60px" }}
+				className="w-6/6 bg-mintGreenCustom flex items-center justify-center"
+			>
 				{/* START INNER CONTAINER - Recipe details (white one) */}
 				<div
 					style={{ paddingBottom: "60px" }}
@@ -79,7 +84,10 @@ export const RecipeDetails = () => {
 						className="w-5/6 h-fit flex items-start justify-center"
 					>
 						{/* START PARAGRAPH ---- Summary p */}
-						<p dangerouslySetInnerHTML={{ __html: summaryHTML }} className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose">
+						<p
+							dangerouslySetInnerHTML={{ __html: summaryHTML }}
+							className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose"
+						>
 							{/* content from dangerouslySetInnerHTML */}
 						</p>
 						{/* END PARAGRAPH ---- Summary p */}
@@ -87,7 +95,7 @@ export const RecipeDetails = () => {
 					{/* END SECTION ---- Summary description */}
 
 					{/* START SECTION ---- Servings */}
-					<section className="w-5/6 h-fit flex items-start justify-start" >
+					<section className="w-5/6 h-fit flex items-start justify-start">
 						{/* START PARAGRAPH ---- Serving p */}
 						<p className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose">
 							Portions for {servings} servings. Ready in {readyInMinutes} min.
@@ -146,7 +154,11 @@ export const RecipeDetails = () => {
 					{/* START SECTION ---- Instructions section */}
 					<section className="w-5/6 h-fit flex items-start justify-center">
 						{/* START PARAGRAPH ---- Instructions p */}
-						<p dangerouslySetInnerHTML={{ __html: instructionsHTML }} id="content-instructions" className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose">
+						<p
+							dangerouslySetInnerHTML={{ __html: instructionsHTML }}
+							id="content-instructions"
+							className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose"
+						>
 							{/* content from dangerouslySetInnerHTML */}
 						</p>
 						{/* END PARAGRAPH ---- Instructions p */}
