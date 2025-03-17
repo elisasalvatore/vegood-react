@@ -48,7 +48,6 @@ export const RecipeDetails = () => {
 				className="w-screen h-100 md:h-screen bg-center bg-no-repeat bg-cover brightness-100 flex items-end justify-center"
 				style={{ backgroundImage: `url(${image})` }}
 			>
-				{/* <img src={image} alt={name} className='w-screen h-screen object-fit'/> */}
 				<div className="w-5/6 h-[60%] bg-whiteCustom flex items-center justify-center">
 					{/* START SECTION ---- Recipe title */}
 					<section
@@ -128,7 +127,7 @@ export const RecipeDetails = () => {
 									<li
 										style={{ paddingLeft: "20px", marginLeft: "30px" }}
 										key={ingredient.id}
-										className="list-disc leading-14"
+										className="list-disc leading-loose md:leading-12"
 									>
 										{ingredient.original}
 									</li>

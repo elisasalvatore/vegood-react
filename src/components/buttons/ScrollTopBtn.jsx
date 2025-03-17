@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { IoIosArrowRoundUp } from "react-icons/io";
-
 
 export const ScrollTopBtn = () => {
 	const [visible, setVisible] = useState(false);
@@ -21,10 +19,12 @@ export const ScrollTopBtn = () => {
 	return (
 		<>
 			{visible && 
-				<IoIosArrowRoundUp
+				<div
 				onClick={scrollTop}
-				className="w-8 h-8 md:w-10 md:h-10 2xl:w-14 2xl:h-14 fixed absolute bottom-16 2xl:bottom-15 right-1 lg:right-15 rounded-[50%] bg-orangeCustom text-white cursor-pointer hover:scale-80 z-9999"
-				/>
+				className="w-[120px] h-fit z-9999 flex items-center justify-center uppercase rotate-90 fixed absolute bottom-27 -right-10 md:-right-2 lg:w-[140px] lg:text-[18px] 2xl:w-[170px] 2xl:bottom-32 2xl:text-[22px] rounded text-orangeCustom cursor-pointer hover:bg-orangeCustom hover:text-whiteCustom"
+				>
+					scroll to top
+				</div>
 			}
 		</>
 	);
