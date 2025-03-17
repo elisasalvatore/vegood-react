@@ -41,7 +41,7 @@ export const RecipeDetails = () => {
 			{/* Back to home Button */}
 			<BackHomeBtn />
 			{/* Scroll to top Button */}
-			<ScrollTopBtn />
+			{/* <ScrollTopBtn /> ----- REMOVE? */}
 
 			{/* START HERO IMAGE - Image recipe full screen */}
 			<div
