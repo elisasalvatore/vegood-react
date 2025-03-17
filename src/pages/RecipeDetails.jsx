@@ -21,7 +21,7 @@ export const RecipeDetails = () => {
 			setRecipe(data);
 		};
 		getRecipeDetails();
-	}, []);
+	});
 
 	const {
 		image,
@@ -45,7 +45,7 @@ export const RecipeDetails = () => {
 
 			{/* START HERO IMAGE - Image recipe full screen */}
 			<div
-				className="w-screen h-100 md:h-screen bg-center bg-no-repeat bg-cover brightness-100 flex items-end justify-center"
+				className="w-screen h-100 md:h-screen bg-center bg-no-repeat bg-cover brightness-100 flex items-end justify-center scroll-smooth"
 				style={{ backgroundImage: `url(${image})` }}
 			>
 				<div className="w-5/6 h-[60%] bg-whiteCustom flex items-center justify-center">

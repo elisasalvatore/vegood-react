@@ -5,6 +5,7 @@ import { RecipesContextProvider } from "./store/apiContext";
 //pages
 import { Home } from "./pages/Home";
 import { RecipeDetails } from "./pages/RecipeDetails";
+import { ErrorPage404 } from './pages/ErrorPage404';
 //components
 import { Navbar } from "./components/Navbar";
 
@@ -13,7 +14,7 @@ function App() {
 		<RecipesContextProvider>
 			<Navbar />
 			<Routes>
-				{/* <Route path="*" element={<NoMatch />} /> ----- TODOOOO ------ */} 
+				<Route path="*" element={<ErrorPage404 />} />
 				<Route path="/" element={<Home />} />
 				<Route path="/recipes/:id" element={<RecipeDetails />} />
 			</Routes>

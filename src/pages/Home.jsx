@@ -6,7 +6,7 @@ import { RecipesSection } from "../components/recipes/RecipesSection";
 
 export const Home = () => {
 	return (
-		<div className="App w-full bg-mintGreenCustom flex flex-col items-center justify-center">
+		<div className="App w-full bg-mintGreenCustom flex flex-col items-center justify-center scroll-smooth">
 			<HeroSection />
 			<RecipesSection />
 		</div>
