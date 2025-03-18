@@ -1,10 +1,11 @@
 import axios from "axios";
 import DOMPurify from "dompurify";
 import React, { useEffect, useState } from "react";
+import { LuWheatOff } from "react-icons/lu";
+import { LuVegan } from "react-icons/lu";
 import { useParams } from "react-router";
 //components
 import { BackHomeBtn } from "../components/buttons/BackHomeBtn";
-import { ScrollTopBtn } from "../components/buttons/ScrollTopBtn";
 
 export const RecipeDetails = () => {
 	const [recipe, setRecipe] = useState({});
@@ -21,7 +22,7 @@ export const RecipeDetails = () => {
 			setRecipe(data);
 		};
 		getRecipeDetails();
-	});
+	}, []);
 
 	const {
 		image,
@@ -31,6 +32,8 @@ export const RecipeDetails = () => {
 		readyInMinutes,
 		extendedIngredients,
 		instructions,
+		vegan,
+		glutenFree,
 	} = recipe;
 
 	const summaryHTML = DOMPurify.sanitize(summary);
@@ -38,10 +41,8 @@ export const RecipeDetails = () => {
 
 	return (
 		<>
-			{/* Back to home Button */}
+			{/* Back To Home Button */}
 			<BackHomeBtn />
-			{/* Scroll to top Button */}
-			{/* <ScrollTopBtn /> ----- REMOVE? */}
 
 			{/* START HERO IMAGE - Image recipe full screen */}
 			<div
@@ -50,9 +51,7 @@ export const RecipeDetails = () => {
 			>
 				<div className="w-5/6 h-[60%] bg-whiteCustom flex items-center justify-center">
 					{/* START SECTION ---- Recipe title */}
-					<section
-						className="w-5/6 h-6/6 border-b-3 border-lightGreenCustom flex items-center justify-center"
-					>
+					<section className="w-5/6 h-6/6 border-b-3 border-lightGreenCustom flex items-center justify-center">
 						{/* START TITLE ---- Recipe title */}
 						<h2 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-8xl font-bold text-center">
 							{title}
@@ -72,11 +71,8 @@ export const RecipeDetails = () => {
 				{/* START INNER CONTAINER - Recipe details (white one) */}
 				<div
 					style={{ paddingBottom: "60px" }}
-					// className="w-5/6 bg-whiteCustom flex flex-col items-center justify-between relative md:-top-70 lg:-top-60 2xl:-top-125"
-					// className="w-5/6 h-[100%] bg-whiteCustom flex flex-col items-center justify-between absolute md:-top-70 lg:-top-100 2xl:-top-150"
 					className="w-5/6 h-[100%] bg-whiteCustom flex flex-col items-center justify-between"
 				>
-
 					{/* START SECTION ---- Summary description */}
 					<section
 						style={{ padding: "60px 0" }}
@@ -98,7 +94,29 @@ export const RecipeDetails = () => {
 						{/* START PARAGRAPH ---- Serving p */}
 						<p className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose">
 							Portions for {servings} servings. Ready in {readyInMinutes} min.
-							[icon] Gluten Free [icon] Vegan
+							{/* [icon] Gluten Free [icon] Vegan */}
+							<div className='w-fit h-fit flex flex-col items-start justify-center text-paleGreenCustom'>
+								<span className="flex items-center justify-center">
+									{vegan ? (
+										<>
+											<LuVegan />
+											<p style={{ marginLeft: "10px" }}>Vegan</p>{" "}
+										</>
+									) : (
+										" "
+									)}
+								</span>
+								<span className="flex items-center justify-center">
+									{glutenFree ? (
+										<>
+											<LuWheatOff />
+											<p style={{ marginLeft: "10px" }}>Gluten Free</p>{" "}
+										</>
+									) : (
+										" "
+									)}
+								</span>
+							</div>
 							<br />
 						</p>
 						{/* END PARAGRAPH ---- Serving p */}

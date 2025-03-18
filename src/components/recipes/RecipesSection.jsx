@@ -15,8 +15,6 @@ export const RecipesSection = () => {
 			style={{ paddingTop: 40, paddingBottom: 60 }}
 			className="w-full lg:w-5/6 min-h-[80vh] h-full bg-mintGreenCustom flex flex-col items-center gap-16"
 		>
-			{/* Scroll to top Button */}
-			{/* <ScrollTopBtn /> ----- REMOVE? */}
 
 			{/* Title section */}
 			<div className="w-full h-30 md:h-35 lg:h-40 flex items-center justify-center">
