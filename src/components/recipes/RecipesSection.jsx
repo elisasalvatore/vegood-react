@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import APIContext from "../../store/apiContext";
 //components
 import { LoadMoreBtn } from "../buttons/LoadMoreBtn";
-import { ScrollTopBtn } from "../buttons/ScrollTopBtn";
 import { SearchBar } from "../SearchBar";
 import { RecipesList } from "./RecipesList";
 
