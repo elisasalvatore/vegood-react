@@ -15,8 +15,8 @@ export const Home = () => {
 				<link rel="icon" content="../assets/images/favicon.png" />
 				{/* OG TAGS */}
 				<meta property="og:title" content="Vegood" />
-				<meta property="og:url" content="website" />
 				<meta property="og:url" content="https://vegood-react.netlify.app/" />
+				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
 					content="https://vegood-react.netlify.app/assets/images/vegood-preview.png"
@@ -30,6 +30,7 @@ export const Home = () => {
 					content="A vegetarian recipe website."
 				/>
 				{/* TWITTER TAGS */}
+				<meta name="twitter:title" content="Vegood - A vegetarian recipe website" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta
 					name="twitter:image"
