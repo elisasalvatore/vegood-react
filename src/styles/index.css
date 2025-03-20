@@ -29,3 +29,57 @@
 		height: 130px;
 	}
 }
+
+/* Style - Mobile S */
+.btn-backToHome {
+	z-index: 45;
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(-90deg);
+	position: fixed;
+	top: 52%;
+	left: -26px;
+}
+
+/* Media Query Style - Mobile M/L */
+@media (min-width: 376px) and (max-width: 425px) {
+	.btn-backToHome {
+		top: 52%;
+		left: -23px;
+	}
+}
+
+/* Media Query Style - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+	.btn-backToHome {
+		top: 50%;
+		left: -9px;
+	}
+}
+
+/* Media Query Style - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.btn-backToHome {
+		top: 50%;
+		left: -15px;
+	}
+}
+
+/* Media Query Style - Laptop L */
+@media (min-width: 1025px) and (max-width: 1440px) {
+	.btn-backToHome {
+		top: 50%;
+		left: 0;
+	}
+}
+
+/* Media Query Style - 4K */
+@media screen and (min-width: 1441px) {
+	.btn-backToHome {
+		top: 50%;
+		left: 25px;
+	}
+}

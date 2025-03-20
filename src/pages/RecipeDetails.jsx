@@ -1,11 +1,12 @@
 import axios from "axios";
-import DOMPurify from "dompurify";
 import React, { useEffect, useState } from "react";
-import { LuWheatOff } from "react-icons/lu";
-import { LuVegan } from "react-icons/lu";
 import { useParams } from "react-router";
 //components
 import { BackHomeBtn } from "../components/buttons/BackHomeBtn";
+import { IngredientsRecipe } from "../components/recipe-details/IngredientsRecipe";
+import { InstructionsRecipe } from "../components/recipe-details/InstructionsRecipe";
+import { SummaryRecipe } from "../components/recipe-details/SummaryRecipe";
+import { TitleImageRecipe } from "../components/recipe-details/TitleImageRecipe";
 
 export const RecipeDetails = () => {
 	const [recipe, setRecipe] = useState({});
@@ -22,165 +23,52 @@ export const RecipeDetails = () => {
 			setRecipe(data);
 		};
 		getRecipeDetails();
-	}, []);
+	}, [API_URL_RECIPE_DETAILS, API_KEY, id]);
 
 	const {
 		image,
 		title,
 		summary,
 		servings,
-		readyInMinutes,
 		extendedIngredients,
 		instructions,
 		vegan,
 		glutenFree,
 	} = recipe;
 
-	const summaryHTML = DOMPurify.sanitize(summary);
-	const instructionsHTML = DOMPurify.sanitize(instructions);
-
 	return (
 		<>
-			{/* Back To Home Button */}
-			<BackHomeBtn />
-
-			{/* START HERO IMAGE - Image recipe full screen */}
-			<div
-				className="w-screen h-100 md:h-screen bg-center bg-no-repeat bg-cover brightness-100 flex items-end justify-center scroll-smooth"
-				style={{ backgroundImage: `url(${image})` }}
-			>
-				<div className="w-5/6 h-[60%] bg-whiteCustom flex items-center justify-center">
-					{/* START SECTION ---- Recipe title */}
-					<section className="w-5/6 h-6/6 border-b-3 border-lightGreenCustom flex items-center justify-center">
-						{/* START TITLE ---- Recipe title */}
-						<h2 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-8xl font-bold text-center">
-							{title}
-						</h2>
-						{/* END TITLE ---- Recipe title */}
-					</section>
-					{/* START SECTION ---- Recipe title */}
-				</div>
-			</div>
-			{/* END HERO IMAGE - Image recipe full screen */}
+			{/* Title and Image (full screen) */}
+			<TitleImageRecipe title={title} image={image} />
 
 			{/* START MAIN CONTAINER - Recipe details (green one) */}
 			<div
 				style={{ paddingBottom: "60px" }}
 				className="w-6/6 bg-mintGreenCustom flex items-center justify-center"
 			>
+				{/* Back To Home Button */}
+				<BackHomeBtn />
+
 				{/* START INNER CONTAINER - Recipe details (white one) */}
 				<div
 					style={{ paddingBottom: "60px" }}
 					className="w-5/6 h-[100%] bg-whiteCustom flex flex-col items-center justify-between"
 				>
-					{/* START SECTION ---- Summary description */}
-					<section
-						style={{ padding: "60px 0" }}
-						className="w-5/6 h-fit flex items-start justify-center"
-					>
-						{/* START PARAGRAPH ---- Summary p */}
-						<p
-							dangerouslySetInnerHTML={{ __html: summaryHTML }}
-							className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose"
-						>
-							{/* content from dangerouslySetInnerHTML */}
-						</p>
-						{/* END PARAGRAPH ---- Summary p */}
-					</section>
-					{/* END SECTION ---- Summary description */}
+					{/* Summary */}
+					<SummaryRecipe
+						glutenFree={glutenFree}
+						vegan={vegan}
+						summary={summary}
+					/>
 
-					{/* START SECTION ---- Servings */}
-					<section className="w-5/6 h-fit flex items-start justify-start">
-						{/* START PARAGRAPH ---- Serving p */}
-						<p className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose">
-							Portions for {servings} servings. Ready in {readyInMinutes} min.
-							{/* [icon] Gluten Free [icon] Vegan */}
-							<div className='w-fit h-fit flex flex-col items-start justify-center text-paleGreenCustom'>
-								<span className="flex items-center justify-center">
-									{vegan ? (
-										<>
-											<LuVegan />
-											<p style={{ marginLeft: "10px" }}>Vegan</p>{" "}
-										</>
-									) : (
-										" "
-									)}
-								</span>
-								<span className="flex items-center justify-center">
-									{glutenFree ? (
-										<>
-											<LuWheatOff />
-											<p style={{ marginLeft: "10px" }}>Gluten Free</p>{" "}
-										</>
-									) : (
-										" "
-									)}
-								</span>
-							</div>
-							<br />
-						</p>
-						{/* END PARAGRAPH ---- Serving p */}
-					</section>
-					{/* END SECTION ---- Servings */}
+					{/* Ingredients */}
+					<IngredientsRecipe
+						extendedIngredients={extendedIngredients}
+						servings={servings}
+					/>
 
-					{/* START SECTION ---- Ingredients title */}
-					<section
-						style={{ padding: "60px 0" }}
-						className="w-5/6 h-fit font-bold"
-					>
-						{/* START TITLE ---- Ingredients title */}
-						<h3 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl text-orangeCustom">
-							Ingredients
-						</h3>
-						{/* END TITLE ---- Ingredients title */}
-					</section>
-					{/* END SECTION ---- Ingredients title */}
-
-					{/* START SECTION ---- Ingredients list */}
-					<div className="w-5/6 h-fit flex items-start justify-start">
-						{/* START LIST ---- Ingredients list */}
-						<ul className="w-full text-md lg:text-2xl 2xl:text-3xl text-justify text-blackCustom">
-							{extendedIngredients &&
-								extendedIngredients.map((ingredient) => (
-									<li
-										style={{ paddingLeft: "20px", marginLeft: "30px" }}
-										key={ingredient.id}
-										className="list-disc leading-loose md:leading-12"
-									>
-										{ingredient.original}
-									</li>
-								))}
-						</ul>
-						{/* END LIST ---- Ingredients list */}
-					</div>
-					{/* END SECTION ---- Ingredients list */}
-
-					{/* START SECTION ---- Instructions title */}
-					<section
-						style={{ padding: "60px 0" }}
-						className="w-5/6 h-fit font-bold"
-					>
-						{/* START TITLE ---- Instructions title */}
-						<h3 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl text-orangeCustom">
-							Instructions
-						</h3>
-						{/* END TITLE ---- Instructions title */}
-					</section>
-					{/* END SECTION ---- Instructions title */}
-
-					{/* START SECTION ---- Instructions section */}
-					<section className="w-5/6 h-fit flex items-start justify-center">
-						{/* START PARAGRAPH ---- Instructions p */}
-						<p
-							dangerouslySetInnerHTML={{ __html: instructionsHTML }}
-							id="content-instructions"
-							className="text-md md:text-lg lg:text-2xl 2xl:text-3xl text-justify text-blackCustom leading-loose"
-						>
-							{/* content from dangerouslySetInnerHTML */}
-						</p>
-						{/* END PARAGRAPH ---- Instructions p */}
-					</section>
-					{/* END SECTION ---- Instructions section */}
+					{/* Instructions */}
+					<InstructionsRecipe instructions={instructions} />
 				</div>
 				{/* END INNER CONTAINER - Recipe details (white one) */}
 			</div>

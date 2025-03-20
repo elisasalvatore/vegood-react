@@ -24,7 +24,7 @@ export const ScrollTopBtn = () => {
 			{visible && 
 				<div
 				onClick={scrollTop}
-				className="w-[120px] h-fit z-9999 flex items-center justify-center uppercase rotate-90 fixed absolute bottom-30 -right-10 md:-right-2 lg:w-[140px] lg:bottom-32 lg:text-[18px] 2xl:w-[170px] 2xl:bottom-35 2xl:text-[22px] rounded text-orangeCustom cursor-pointer hover:bg-orangeCustom hover:text-whiteCustom"
+				className="w-[120px] h-fit z-9999 flex items-center justify-center uppercase rotate-90 fixed absolute bottom-30 -right-10 text-xs md:-right-6 lg:w-[140px] lg:bottom-32 lg:text-lg  2xl:w-[180px] 2xl:bottom-40 2xl:text-2xl text-orangeCustom cursor-pointer hover:bg-orangeCustom hover:text-whiteCustom"
 				>
 					scroll to top
 				</div>
