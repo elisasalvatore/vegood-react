@@ -7,6 +7,7 @@ import { IngredientsRecipe } from "../components/recipe-details/IngredientsRecip
 import { InstructionsRecipe } from "../components/recipe-details/InstructionsRecipe";
 import { SummaryRecipe } from "../components/recipe-details/SummaryRecipe";
 import { TitleImageRecipe } from "../components/recipe-details/TitleImageRecipe";
+import { SEORecipe } from "../components/SEORecipe";
 
 export const RecipeDetails = () => {
 	const [recipe, setRecipe] = useState({});
@@ -38,6 +39,9 @@ export const RecipeDetails = () => {
 
 	return (
 		<>
+			{/* SEO Open Graph Tags*/}
+			<SEORecipe id={id} title={title} summary={summary} image={image} />
+
 			{/* Title and Image (full screen) */}
 			<TitleImageRecipe title={title} image={image} />
 

@@ -1,6 +1,6 @@
-# Vegood React
+# Vegood
 
-Benvenuti in **Vegood React**, una piattaforma moderna per scoprire e condividere ricette vegetariane, sviluppata con **React** e **Vite**.
+Benvenuti in **Vegood**, una piattaforma moderna per scoprire e condividere ricette vegetariane, sviluppata con **React** e **Vite**.
 
 Per visualizzare il progetto [clicca qui](https://vegood-react.netlify.app/).
 
