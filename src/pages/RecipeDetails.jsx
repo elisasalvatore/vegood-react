@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 //components
 import { BackHomeBtn } from "../components/buttons/BackHomeBtn";
-import { MetaTags } from "../components/MetaTags";
 import { IngredientsRecipe } from "../components/recipe-details/IngredientsRecipe";
 import { InstructionsRecipe } from "../components/recipe-details/InstructionsRecipe";
 import { SummaryRecipe } from "../components/recipe-details/SummaryRecipe";
 import { TitleImageRecipe } from "../components/recipe-details/TitleImageRecipe";
+import { Head } from '../components/Head';
 
 export const RecipeDetails = () => {
 	const [recipe, setRecipe] = useState({});
@@ -39,8 +39,8 @@ export const RecipeDetails = () => {
 
 	return (
 		<>
-			{/* SEO Open Graph Tags*/}
-			<MetaTags title={title} summary={summary} image={image} />
+			{/* Head Meta Tags */}
+			<Head id={id} title={title} summary={summary} image={image} />
 
 			{/* Title and Image (full screen) */}
 			<TitleImageRecipe title={title} image={image} />
