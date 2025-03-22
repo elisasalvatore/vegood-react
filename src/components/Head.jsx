@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 export const Head = ({ id, title, summary, image }) => {
-	const pageTitle = title + " | Vegood " || "Vegood";
+	const pageTitle = title ? `${title} | Vegood` : "Vegood";
 	const pageDescription =
 		summary ||
 		"Discover the best vegetarian recipes on Vegood. From nutritious breakfasts to indulgent desserts, we have everything to satisfy your palate in an ethical way.";
