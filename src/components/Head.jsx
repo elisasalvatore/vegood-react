@@ -6,12 +6,11 @@ export const Head = ({ id, title, summary, image }) => {
 		summary ||
 		"Discover the best vegetarian recipes on Vegood. From nutritious breakfasts to indulgent desserts, we have everything to satisfy your palate in an ethical way.";
 	const pageImage =
-		image ||
-		"https://vegood-react.netlify.app/assets/images/vegood-preview.png";
+		image || "https://vegood-react.netlify.app/vegood-preview.png";
 	const pageUrl = id
 		? `https://vegood-react.netlify.app/recipes/${id}`
 		: "https://vegood-react.netlify.app/";
-	const faviconUrl = "https://vegood-react.netlify.app/assets/favicon.ico";
+	const faviconUrl = "https://vegood-react.netlify.app/favicon.ico";
 
 	useEffect(() => {
 		document.title = pageTitle;
