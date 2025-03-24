@@ -59,7 +59,7 @@ http://localhost:5173/
 
 ## Screenshot
 
-<img class="w-100" src="./src/assets/images/vegood-preview.png" alt="Vegood"/>
+<img class="w-100" src="./public/vegood-preview.png" alt="Vegood"/>
 
 ## Contatti
 
